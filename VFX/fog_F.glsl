@@ -13,8 +13,8 @@ float LinearizeDepth(float depth)
 void main()
 {             
     float depth = LinearizeDepth(gl_FragCoord.z) / far;
-    float d = 1 - depth;
+    float iColor = 1 - depth; // inverted color
     float darknessFactor = 0.5;
-    vec4 idk = vec4(vec3(d * darknessFactor),1.0);
-    FragColor = idk;
+    vec4 f = vec4(vec3(iColor * darknessFactor),1.0); // final
+    FragColor = f;
 }
