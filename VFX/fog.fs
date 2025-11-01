@@ -12,7 +12,7 @@ float LinearizeDepth(float depth)
 
 void main()
 {             
-    float depth = LinearizeDepth(gl_FragCoord.z) / far; // divide by far for demonstration
+    float depth = LinearizeDepth(gl_FragCoord.z) / far;
     float d = 1 - depth;
     float darknessFactor = 0.5;
     vec4 idk = vec4(vec3(d * darknessFactor),1.0);
